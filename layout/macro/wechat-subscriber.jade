@@ -1,0 +1,5 @@
+if site.configs.wechat_subscriber_enable and has(site.configs.wechat_subscriber_qrcode)
+	div(id='wechat_subscriber', style='display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center')
+		img(id='wechat_subscriber_qcode', src=site.configs.wechat_subscriber_qrcode, alt=site.configs.author, style='width: 200px; max-width: 100%;')
+		if site.configs.wechat_subscriber_description
+			div= site.configs.wechat_subscriber_description

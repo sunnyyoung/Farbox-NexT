@@ -1,0 +1,45 @@
+- var class_site_meta = null
+if site.configs.avatar
+	class_site_meta = 'site-meta custom-logo'
+else
+	class_site_meta = 'site-meta'
+div(class=class_site_meta)
+	if site.configs.avatar and site.configs.scheme == 'Muse'
+		.site-meta-headline
+			a
+				img(src=site.configs.avatar, alt=site.configs.title).custom-logo-image
+	.custom-logo-site-title
+		a(href='/', rel='start').brand
+			span.logo-line-before
+				i
+			span.site-title
+				site.configs.title
+			span.logo-line-after
+				i
+	if site.configs.subtitle
+		p.site-subtitle= site.configs.subtitle
+
+.site-nav-toggle
+	button
+		span.btn-bar
+		span.btn-bar
+		span.btn-bar
+
+.site-nav
+	ul#menu.menu
+		li.menu-item.menu-item-home
+			a(href='/', rel='section')
+				i.menu-item-icon.fa.fa-fw.fa-home
+				br
+				首页
+		li.menu-item.menu-item-archive
+			a(href='/archive', rel='section')
+				i.menu-item-icon.fa.fa-fw.fa-archive
+				br
+				归档
+		if has('about.md')
+			li.menu-item.menu-item-about
+				a(href='/about.md', rel='section')
+					i.menu-item-icon.fa.fa-fw.fa-user
+					br
+					关于

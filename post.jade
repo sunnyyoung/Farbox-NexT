@@ -1,0 +1,23 @@
+extends base
+from layout/macro/post import render as post_template
+from layout/macro/sidebar import render as sidebar_template
+
+block title
+	title= post.title
+
+block content
+	.posts-expand#posts
+		+post_template(post, is_index=False)
+		.post-spread
+			if site.configs.duoshuo
+				include layout/partials/share/duoshuo_share
+
+block comments
+	include layout/partials/comments
+
+block sidebar
+	+sidebar_template(is_post=True)
+
+block script_extra
+	include layout/scripts/pages/post-details
+	include layout/scripts/third-party/comments

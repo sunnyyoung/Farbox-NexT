@@ -1,0 +1,40 @@
+extends base
+from layout/macro/post-collapse import render as post_template
+from layout/macro/sidebar import render as sidebar_template
+
+block title
+	title='归档 | %s'%site.title
+
+block content
+	section#posts.posts-collapse
+		- var cheers = null
+		- var posts_count = get_data(type='post', return_count=True)
+		if posts_count > 210
+			cheers = '太棒了'
+		else if posts_count > 130
+			cheers = '非常好'
+		else if posts_count > 80
+			cheers = '很好'
+		else if posts_count > 50
+			cheers = '好'
+		else if posts_count > 30
+			cheers = 'OK'
+		else
+			cheers = '嗯..'
+		span.archive-move-on
+		span.archive-page-counter= cheers + ' 目前共计 ' + posts_count + ' 篇日志。继续努力。'
+		- var title_year = null
+		for post in posts
+			- var post_year = post.date.format("%Y")
+			if post_year != title_year
+				title_year = post_year
+				.collection-title
+					h2(id='archive-year-' + post_year).archive-year.motion-element= post_year
+			+post_template(post)
+	include layout/partials/pagination
+
+block sidebar
+	+sidebar_template(is_post=False)
+
+block script_extra
+	script(type='text/javascript', id='motion.page.archive')= '$(\'.archive-year\').velocity(\'transition.slideLeftIn\');'

@@ -1,0 +1,11 @@
+script(type='text/javascript')= 'if (Object.prototype.toString.call(window.Promise) !== \'[object Function]\') {window.Promise = null;}'
+
+load('//cdn.bootcss.com/jquery/2.1.4/jquery.min.js')
+load('//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js')
+load('//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js')
+load('//cdn.bootcss.com/velocity/1.2.3/velocity.min.js')
+load('//cdn.bootcss.com/velocity/1.2.3/velocity.ui.min.js')
+if site.configs.fancybox
+	load('//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js')
+if not site.configs.duoshuo and site.configs.disqus
+	script#dsq-count-scr(src='//%s.disqus.com/count.js'%site.configs.disqus)

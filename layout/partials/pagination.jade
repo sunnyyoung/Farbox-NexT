@@ -1,0 +1,27 @@
+nav.pagination
+	- var range_begin = 0
+	- var range_end = 0
+	- var page_type = null
+	if request.path != '/'
+		page_type = request.path.split('/page/')[0]
+	if paginator.page - 2 <= 0
+		range_begin = 1
+	else
+		range_begin = paginator.page - 2
+	if paginator.page + 3 > paginator.total_pages
+		range_end = paginator.total_pages + 1
+	else
+		range_end = paginator.page + 3
+	if paginator.has_pre
+		a(class='extend prev', href=paginator.pre_page_url, rel='prev')
+			i.fa.fa-angle-left
+	for page in range(range_begin, range_end)
+		if paginator.page != page and page == 1
+			a(class='page-number', href=page_type)= page
+		else if paginator.page == page
+			span.page-number.current= page
+		else
+			a(class='page-number', href=page_type + '/page/%s'%page)= page
+	if paginator.has_next
+		a(class='extend next', href=paginator.next_page_url, rel='next')
+			i.fa.fa-angle-right

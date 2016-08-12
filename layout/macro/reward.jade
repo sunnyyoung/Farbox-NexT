@@ -1,0 +1,15 @@
+if site.configs.reward_enable
+	div(style='padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;')
+		if site.configs.reward_comment
+			div= site.configs.reward_comment
+		button(id='rewardButton', disable='enable', onclick='var qr = document.getElementById(\'QR\'); if (qr.style.display === \'none\') {qr.style.display=\'block\';} else {qr.style.display=\'none\'}')
+			span= '赏'
+		div(id='QR', style='display: none;')
+			if has(site.configs.wechatpay)
+				div(id='wechat', style='display: inline-block')
+					img(id='wechat_qr', src=site.configs.wechatpay, alt=site.configs.author + 'WeChat Pay')
+					p= '微信打赏'
+			if has(site.configs.alipay)
+				div(id='alipay', style='display: inline-block')
+					img(id='alipay_qr', src=site.configs.alipay, alt=site.configs.author + 'Alipay')
+					p= '支付宝打赏'

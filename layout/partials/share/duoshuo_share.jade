@@ -1,0 +1,14 @@
+.ds-share.flat(data-thread-key=post.url_path, data-title=post.title, data-url=request.host + post.url)
+	.ds-share-inline
+		ul.ds-share-icons-16
+			li(data-toggle='ds-share-icons-more')
+				a.ds-more(href='javascript:void(0);')= '分享到：'
+			li
+				a.ds-weibo(href='javascript:void(0);', data-service='weibo')= '微博'
+			li
+				a.ds-qzone(href='javascript:void(0);', data-service='qzone')= 'QQ空间'
+			li
+				a.ds-qqt(href='javascript:void(0);', data-service='qqt')= '腾讯微博'
+			li
+				a.ds-wechat(href='javascript:void(0);', data-service='wechat')= '微信'
+		.ds-share-icons-more

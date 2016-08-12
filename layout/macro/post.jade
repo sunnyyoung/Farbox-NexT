@@ -1,0 +1,85 @@
+mixin render(post, is_index, post_extra_class)
+	article(class='post post-type-normal %s'%post_extra_class)
+		header.post-header
+			h1.post-title(itemprop='name headline')
+				if is_index
+					a.post-title-link(href=post.url, itemprop='url')= post.title
+				else
+					post.title
+			.post-meta
+				- var post_time = post.date.format("%Y-%m-%d")
+				span.post-time
+					span.post-meta-item-icon
+						i.fa.fa-calendar-o
+					span.post-meta-item-text= '发表于 '
+					time(itemprop='dateCreated', datetime=post_time, content=post_time)= post_time
+				
+				- var category = post.parent_raw_path.split('/')[1]
+				if category
+					span.post-category= '&nbsp; | &nbsp;'
+						span.post-meta-item-icon
+							i.fa.fa-folder-o
+						span.post-meta-item-text= '分类于 '
+						span(itemprop='about')
+							a(href='/category/%s'%category, itemprop='url', rel='index')
+								span(itemprop='name')= category
+
+				if site.configs.comment
+					if site.configs.disqus and not site.configs.duoshuo
+						span.post-comments-count= '&nbsp; | &nbsp;'
+							a(href=post.url + '#comments', itemprop='discussionUrl')
+								span.post-comments-count.disqus-comment-count(itemprop='commentsCount', data-disqus-identifier=post.url_path)
+					else if site.configs.duoshuo and not site.configs.disqus
+						span.post-comments-count= '&nbsp; | &nbsp;'
+							a(href=post.url + '#comments', itemprop='discussionUrl')
+								span.post-comments-count.ds-thread-count(itemprop='commentsCount', data-thread-key=post.url_path)
+					else
+						span.post-comments-count= '&nbsp; | &nbsp;'
+							a(href=post.url + '#comments', itemprop='discussionUrl')
+								if post.comments_count
+									span.post-comments-count(itemprop='commentsCount')= '%s条评论'%post.comments_count
+								else
+									span.post-comments-count(itemprop='commentsCount')= '0条评论'
+
+				span.leancloud_visitors(data-flag-title=post.title)= '&nbsp; | &nbsp;'
+					span.post-meta-item-icon
+						i.fa.fa-eye
+					span.post-meta-item-text= '阅读次数 '
+					span.leancloud-visitors-count= post.visits
+
+		div(itemprop='articleBody').post-body
+			if is_index
+				div= post.content.limit(150)
+				.post-more-link.text-center
+					a.btn(href=post.url, rel='contents')= '阅读全文 &raquo;'
+			else
+				div= post.content
+
+		if not is_index
+			div
+				include layout/macro/wechat-subscriber
+		if not is_index
+			div
+				include layout/macro/reward
+		
+		.post-footer
+			if not is_index and post.tags
+				.post-tags
+					for tag in post.tags
+						a(href='/tag/' + tag, rel='tag')= '# %s'%tag
+
+			if not is_index and (pre_one or next_one)
+				.post-nav
+					.post-nav-next.post-nav-item
+						if next_one
+							a(href=next_one.url, rel='next', title=next_one.title)
+								i.fa.fa-chevron-left
+								next_one.title
+					span.post-nav-divider
+					.post-nav-prev.post-nav-item
+						if pre_one
+							a(href=pre_one.url, rel='prev', title=pre_one.title)
+								pre_one.title
+								i.fa.fa-chevron-right
+			if is_index
+				.post-eof

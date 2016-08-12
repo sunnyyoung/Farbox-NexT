@@ -1,0 +1,20 @@
+extends base
+from layout/macro/post-collapse import render as post_template
+from layout/macro/sidebar import render as sidebar_template
+
+block title
+	title= '分类 | %s'%site.title
+
+block content
+	.posts-expand#posts
+		.category-all-page
+			.category-all-title= '目前共计%s个分类'%categories.length
+			.category-all
+				ul.category-list
+					for category in categories
+						li.category-list-item
+							a.category-list-link(href='category/%s'%category.raw_path.split('/')[1])= category.title
+							span.category-list-count= category.posts_count
+
+block sidebar
+	+sidebar_template(is_post=False)

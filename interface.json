@@ -1,0 +1,388 @@
+[
+    {},
+    {},
+    {},
+    {},
+    {
+        "title": "NexT",
+        "icon": "align-justify",
+        "groups":[
+            {
+                "title": "基础信息",
+                "cells":[
+                    {
+                        "parts_per_line": 4,
+                        "parts":[
+                            {
+                                "key": "subtitle",
+                                "title": "Subtitle",
+                                "placeholder": "Subtitle",
+                                "model": "text"
+                            },
+                            {
+                                "key": "author",
+                                "title": "Author",
+                                "placeholder": "Author",
+                                "model": "text"
+                            },
+                            {
+                                "key": "favicon",
+                                "title": "网站图标",
+                                "value": "/_image/favicon.png",
+                                "model": "image",
+                                "width": 120,
+                                "height": 120
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "主题设置",
+                "cells":[
+                    {
+                        "parts_per_line": 3,
+                        "parts":[
+                            {
+                                "key": "scheme",
+                                "title": "Scheme",
+                                "model": "select",
+                                "default_value": "muse",
+                                "options": [
+                                    {
+                                        "value": "muse",
+                                        "title": "Muse"
+                                    },
+                                    {
+                                        "value": "mist",
+                                        "title": "Mist"
+                                    },
+                                    {
+                                        "value": "pisces",
+                                        "title": "Pisces"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "sidebar_position",
+                                "title": "侧边栏位置",
+                                "model": "select",
+                                "default_value": "left",
+                                "options": [
+                                    {
+                                        "value": "left",
+                                        "title": "左"
+                                    },
+                                    {
+                                        "value": "right",
+                                        "title": "右"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "sidebar_display",
+                                "title": "侧边栏显示时机",
+                                "model": "select",
+                                "default_value": "post",
+                                "options": [
+                                    {
+                                        "value": "post",
+                                        "title": "仅文章内"
+                                    },
+                                    {
+                                        "value": "always",
+                                        "title": "总是显示"
+                                    },
+                                    {
+                                        "value": "hide",
+                                        "title": "总是隐藏"
+                                    },
+                                    {
+                                        "value": "remove",
+                                        "title": "移除"
+                                    }
+                                ]
+                            },
+                            
+                            {
+                                "key": "rss",
+                                "title": "RSS",
+                                "model": "select",
+                                "default_value": "yes",
+                                "options": [
+                                    {
+                                        "value": "yes",
+                                        "title": "开启"
+                                    },
+                                    {
+                                        "value": "no",
+                                        "title": "关闭"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "toc",
+                                "title": "TOC",
+                                "model": "select",
+                                "default_value": "yes",
+                                "options": [
+                                    {
+                                        "value": "yes",
+                                        "title": "开启"
+                                    },
+                                    {
+                                        "value": "no",
+                                        "title": "关闭"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "creative_commons",
+                                "title": "Creative Commons",
+                                "model": "select",
+                                "default_value": "none",
+                                "options": [
+                                    {
+                                        "value": "none",
+                                        "title": "None"
+                                    },
+                                    {
+                                        "value": "zero",
+                                        "title": "zero"
+                                    },
+                                    {
+                                        "value": "by",
+                                        "title": "by"
+                                    },
+                                    {
+                                        "value": "by-nc",
+                                        "title": "by-nc"
+                                    },
+                                    {
+                                        "value": "by-nd",
+                                        "title": "by-nd"
+                                    },
+                                    {
+                                        "value": "by-sa",
+                                        "title": "by-sa"
+                                    },
+                                    {
+                                        "value": "by-nc-nd",
+                                        "title": "by-nc-nd"
+                                    },
+                                    {
+                                        "value": "by-nc-sa",
+                                        "title": "by-nc-sa"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "主题特效",
+                "cells":[
+                    {
+                        "parts_per_line": 4,
+                        "parts":[
+                            {
+                                "key": "fancybox",
+                                "title": "Fancybox",
+                                "model": "select",
+                                "default_value": "yes",
+                                "options": [
+                                    {
+                                        "value": "yes",
+                                        "title": "开启"
+                                    },
+                                    {
+                                        "value": "no",
+                                        "title": "关闭"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "motion",
+                                "title": "Motion",
+                                "model": "select",
+                                "default_value": "yes",
+                                "options": [
+                                    {
+                                        "value": "yes",
+                                        "title": "开启"
+                                    },
+                                    {
+                                        "value": "no",
+                                        "title": "关闭"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "社交",
+                "cells":[
+                    {
+                        "parts_per_line": 4,
+                        "parts":[
+                            {
+                                "key": "weibo",
+                                "title": "Weibo",
+                                "placeholder": "WeiBo ID",
+                                "model": "text"
+                            },
+                            {
+                                "key": "twitter",
+                                "title": "Twitter",
+                                "placeholder": "Twitter ID",
+                                "model": "text"
+                            },
+                            {
+                                "key": "instagram",
+                                "title": "Instagram",
+                                "placeholder": "Instagram ID",
+                                "model": "text"
+                            },
+                            {
+                                "key": "dribbble",
+                                "title": "Dribbble",
+                                "placeholder": "Dribbble ID",
+                                "model": "text"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "微信二维码",
+                "cells":[
+                    {
+                        "parts_per_line": 3,
+                        "parts":[
+                            {
+                                "key": "wechat_subscriber_enable",
+                                "title": "二维码",
+                                "model": "select",
+                                "default_value": "yes",
+                                "options": [
+                                    {
+                                        "value": "yes",
+                                        "title": "开启"
+                                    },
+                                    {
+                                        "value": "no",
+                                        "title": "关闭"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "wechat_subscriber_description",
+                                "title": "二维码说明",
+                                "placeholder": "二维码说明",
+                                "model": "text"
+                            },
+                            {
+                                "key": "wechat_subscriber_qrcode",
+                                "title": "二维码图片 (拖曳图片更换)",
+                                "value": "/_image/qrcode.jpg",
+                                "model": "image",
+                                "width": 120,
+                                "height": 120
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "打赏",
+                "cells":[
+                    {
+                        "parts_per_line": 2,
+                        "parts":[
+                            {
+                                "key": "reward_enable",
+                                "title": "打赏",
+                                "model": "select",
+                                "default_value": "yes",
+                                "options": [
+                                    {
+                                        "value": "yes",
+                                        "title": "开启"
+                                    },
+                                    {
+                                        "value": "no",
+                                        "title": "关闭"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "reward_comment",
+                                "title": "打赏说明",
+                                "placeholder": "打赏说明",
+                                "model": "text"
+                            },
+                            {
+                                "key": "wechatpay",
+                                "title": "微信支付二维码图片 (拖曳图片更换)",
+                                "value": "/_image/wechatpay.jpg",
+                                "model": "image",
+                                "width": 120,
+                                "height": 120
+                            },
+                            {
+                                "key": "alipay",
+                                "title": "支付宝支付二维码图片 (拖曳图片更换)",
+                                "value": "/_image/alipay.jpg",
+                                "model": "image",
+                                "width": 120,
+                                "height": 120
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "友情链接",
+                "cells": [
+                    {
+                        "parts_per_line": 2,
+                        "parts": [
+                            {
+                                "key": "links_title",
+                                "title": "标题",
+                                "placeholder": "友情链接",
+                                "model": "text"
+                            },
+                            {
+                                "key": "links_layout",
+                                "title": "布局",
+                                "model": "select",
+                                "default_value": "inline",
+                                "options": [
+                                    {
+                                        "value": "inline",
+                                        "title": "Inline"
+                                    },
+                                    {
+                                        "value": "block",
+                                        "title": "Block"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "links",
+                                "placeholder": "Title:http://xxx.farbox.com",
+                                "title": "每行一条记录，标题与链接以 : 分隔",
+                                "model":"textarea",
+                                "is_list": true
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
