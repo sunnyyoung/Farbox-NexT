@@ -6,13 +6,13 @@
     {
         "title": "NexT",
         "icon": "align-justify",
-        "groups":[
+        "groups": [
             {
                 "title": "基础信息",
-                "cells":[
+                "cells": [
                     {
                         "parts_per_line": 4,
-                        "parts":[
+                        "parts": [
                             {
                                 "key": "subtitle",
                                 "title": "Subtitle",
@@ -45,10 +45,10 @@
             },
             {
                 "title": "主题设置",
-                "cells":[
+                "cells": [
                     {
                         "parts_per_line": 3,
-                        "parts":[
+                        "parts": [
                             {
                                 "key": "scheme",
                                 "title": "Scheme",
@@ -191,10 +191,10 @@
             },
             {
                 "title": "主题特效",
-                "cells":[
+                "cells": [
                     {
                         "parts_per_line": 4,
-                        "parts":[
+                        "parts": [
                             {
                                 "key": "fancybox",
                                 "title": "Fancybox",
@@ -233,10 +233,10 @@
             },
             {
                 "title": "社交",
-                "cells":[
+                "cells": [
                     {
                         "parts_per_line": 4,
-                        "parts":[
+                        "parts": [
                             {
                                 "key": "weibo",
                                 "title": "Weibo",
@@ -267,10 +267,10 @@
             },
             {
                 "title": "微信二维码",
-                "cells":[
+                "cells": [
                     {
                         "parts_per_line": 3,
-                        "parts":[
+                        "parts": [
                             {
                                 "key": "wechat_subscriber_enable",
                                 "title": "二维码",
@@ -307,10 +307,10 @@
             },
             {
                 "title": "打赏",
-                "cells":[
+                "cells": [
                     {
                         "parts_per_line": 2,
-                        "parts":[
+                        "parts": [
                             {
                                 "key": "reward_enable",
                                 "title": "打赏",
@@ -383,9 +383,9 @@
                             },
                             {
                                 "key": "links",
-                                "placeholder": "Title:http://xxx.farbox.com",
-                                "title": "每行一条记录，标题与链接以 : 分隔",
-                                "model":"textarea",
+                                "placeholder": "Google:www.google.com",
+                                "title": "每行一条记录，标题与链接以 : 分隔，无需 http:// 前缀",
+                                "model": "textarea",
                                 "is_list": true
                             }
                         ]
