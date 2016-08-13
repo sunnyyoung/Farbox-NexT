@@ -11,7 +11,7 @@ A hexo theme [NexT](https://github.com/iissnan/hexo-theme-next) for Farbox.
 ##Screenshot
 
 ![Farbox-Next Screenshot](http://i.imgur.com/ECZvA3o.png)
-主题继承了NexT原有的三种样式，具体设置可到Farbox的设置页面修改
+主题集成了NexT原有的三种样式，具体设置可到Farbox的设置页面修改
 
 ![Farbox-NexT Settings](http://i.imgur.com/UUohzcm.png)
 ![Farbox-NexT Settings](http://i.imgur.com/dxjW0nl.png)
@@ -19,13 +19,15 @@ A hexo theme [NexT](https://github.com/iissnan/hexo-theme-next) for Farbox.
 
 ##Notes
 
-- **由于Farbox的模版引擎和Hexo有区别，部分Hexo的样式或功能暂时无法实现**
+- **由于Farbox的模版引擎和Hexo有区别，部分Hexo的样式或功能暂时无法实现，持续更新**
 - 本主题没有进行严谨的测试，如果有问题请反馈
 - 欢迎提意见
 
 ##Todo
 
+- [x] Auto toc display
 - [ ] Local Search
+- [ ] Customize code highlight theme 
 
 ##License
 The [MIT License](LICENSE).

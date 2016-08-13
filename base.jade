@@ -8,7 +8,6 @@ html(class=class_html)
 		block title
 		include layout/partials/head
 	body
-		- var class_page = null
 		- var page_type = request.path.split('/')[1]
 		if page_type == '' or page_type == 'page'
 			class_page = 'page-home'
@@ -16,8 +15,7 @@ html(class=class_html)
 			class_page = 'page-archive'
 		else if page_type == 'post'
 			class_page = 'page-post-detail'
-		- var class_container = 'container one-collumn %s'%class_page +  ' sidebar-position-%s'%site.configs.sidebar_position
-		div(class=class_container)
+		div(class='container one-collumn %s'%class_page +  ' sidebar-position-%s'%site.configs.sidebar_position)
 			.headband
 			header#header.header
 				.header-inner

@@ -103,7 +103,6 @@
                                     }
                                 ]
                             },
-                            
                             {
                                 "key": "rss",
                                 "title": "RSS",
@@ -124,15 +123,19 @@
                                 "key": "toc",
                                 "title": "TOC",
                                 "model": "select",
-                                "default_value": "yes",
+                                "default_value": "auto",
                                 "options": [
                                     {
-                                        "value": "yes",
-                                        "title": "开启"
+                                        "value": "auto",
+                                        "title": "自动"
                                     },
                                     {
-                                        "value": "no",
-                                        "title": "关闭"
+                                        "value": "show",
+                                        "title": "显示"
+                                    },
+                                    {
+                                        "value": "remove",
+                                        "title": "移除"
                                     }
                                 ]
                             },

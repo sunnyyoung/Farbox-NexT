@@ -6,7 +6,7 @@ mixin render(is_post)
 			span.sidebar-toggle-line.sidebar-toggle-line-last
 	aside#sidebar.sidebar
 		.sidebar-inner
-			- var display_toc = is_post and site.configs.toc
+			- var display_toc = is_post and (site.configs.toc == 'show' or (site.configs.toc == 'auto' and post.toc))
 			if display_toc
 				ul.sidebar-nav.motion-element
 					li(data-target='post-toc-wrap').sidebar-nav-toc.sidebar-nav-active= '文章目录'
