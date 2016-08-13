@@ -26,6 +26,12 @@
                                 "model": "text"
                             },
                             {
+                                "key": "copyright_year",
+                                "title": "Copyright起始年份",
+                                "placeholder": "2014",
+                                "model": "text"
+                            },
+                            {
                                 "key": "favicon",
                                 "title": "网站图标",
                                 "value": "/_image/favicon.png",

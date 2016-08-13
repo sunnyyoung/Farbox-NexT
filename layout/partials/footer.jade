@@ -1,9 +1,9 @@
 .copyright
-	span(itemprop='copyrightYear')= '&copy;2016'
+	span(itemprop='copyrightYear')= '&copy;%s - <script type=\'text/javascript\'>document.write((new Date()).getFullYear())</script>'%site.configs.copyright_year
 	span.with-love
 		i.fa.fa-heart
 	span.author(itemprop='copyrightHolder')= site.configs.author
-.powered-by
+.powered-by= 'Powered By - '
 	a.theme-link(href='https://www.farbox.com')= 'Farbox'
-.theme-info
-	a.theme-link(href='https://github.com/iissnan/hexo-theme-next')= 'NexT'
+.theme-info= 'Theme - '
+	a.theme-link(href='https://github.com/Sunnyyoung/Farbox-NexT')= 'NexT'
