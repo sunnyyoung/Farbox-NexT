@@ -1,45 +1,45 @@
 - var class_html = null
 if site.configs.motion
-	class_html = 'theme-next %s use-motion'%site.configs.scheme
+    class_html = 'theme-next %s use-motion'%site.configs.scheme
 else
-	class_html = 'theme-next %s'%site.configs.scheme
+    class_html = 'theme-next %s'%site.configs.scheme
 html(class=class_html)
-	head
-		block title
-		include layout/partials/head
-	body
-		- var page_type = request.path.split('/')[1]
-		if page_type == '' or page_type == 'page'
-			class_page = 'page-home'
-		else if page_type == 'archive'
-			class_page = 'page-archive'
-		else if page_type == 'post'
-			class_page = 'page-post-detail'
-		div(class='container one-collumn %s'%class_page +  ' sidebar-position-%s'%site.configs.sidebar_position)
-			.headband
-			header#header.header
-				.header-inner
-					include layout/partials/header
-			main#main.main
-				.main-inner
-					.content-wrap
-						#content.content
-							block content
-						block comments
-					if site.configs.sidebar_display != 'remove'
-						block sidebar
-			footer#footer.footer
-				.footer-inner
-					include layout/partials/footer
-			.back-to-top
-				i.fa.fa-arrow-up
-		include layout/scripts/vendors
-		include layout/scripts/commons
-		include layout/scripts/bootstrap
-		if site.configs.scheme == 'mist'
-			include layout/scripts/schemes/mist
-		else if site.configs.scheme == 'muse'
-			include layout/scripts/schemes/muse
-		else if site.configs.scheme == 'pisces'
-			include layout/scripts/schemes/pisces
-		block script_extra
+    head
+        block title
+        include layout/partials/head
+    body
+        - var page_type = request.path.split('/')[1]
+        if page_type == '' or page_type == 'page'
+            class_page = 'page-home'
+        else if page_type == 'archive'
+            class_page = 'page-archive'
+        else if page_type == 'post'
+            class_page = 'page-post-detail'
+        div(class='container one-collumn %s'%class_page +  ' sidebar-position-%s'%site.configs.sidebar_position)
+            .headband
+            header#header.header
+                .header-inner
+                    include layout/partials/header
+            main#main.main
+                .main-inner
+                    .content-wrap
+                        #content.content
+                            block content
+                        block comments
+                    if site.configs.sidebar_display != 'remove'
+                        block sidebar
+            footer#footer.footer
+                .footer-inner
+                    include layout/partials/footer
+            .back-to-top
+                i.fa.fa-arrow-up
+        include layout/scripts/vendors
+        include layout/scripts/commons
+        include layout/scripts/bootstrap
+        if site.configs.scheme == 'mist'
+            include layout/scripts/schemes/mist
+        else if site.configs.scheme == 'muse'
+            include layout/scripts/schemes/muse
+        else if site.configs.scheme == 'pisces'
+            include layout/scripts/schemes/pisces
+        block script_extra

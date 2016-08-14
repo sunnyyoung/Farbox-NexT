@@ -3,16 +3,16 @@ from layout/macro/post import render as post_template
 from layout/macro/sidebar import render as sidebar_template
 
 block title
-	title= site.title
+    title= site.title
 
 block content
-	section#posts.posts-expand
-		for post in posts
-			+post_template(post, is_index=True)
-	include layout/partials/pagination
+    section#posts.posts-expand
+        for post in posts
+            +post_template(post, is_index=True)
+    include layout/partials/pagination
 
 block sidebar
-	+sidebar_template(is_post=False)
+    +sidebar_template(is_post=False)
 
 block script_extra
-	include layout/scripts/third-party/comments
+    include layout/scripts/third-party/comments

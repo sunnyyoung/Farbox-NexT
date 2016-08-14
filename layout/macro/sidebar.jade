@@ -1,106 +1,106 @@
 mixin render(is_post)
-	.sidebar-toggle
-		.sidebar-toggle-line-wrap
-			span.sidebar-toggle-line.sidebar-toggle-line-first
-			span.sidebar-toggle-line.sidebar-toggle-line-middle
-			span.sidebar-toggle-line.sidebar-toggle-line-last
-	aside#sidebar.sidebar
-		.sidebar-inner
-			- var display_toc = is_post and (site.configs.toc == 'show' or (site.configs.toc == 'auto' and post.toc))
-			if display_toc
-				ul.sidebar-nav.motion-element
-					li(data-target='post-toc-wrap').sidebar-nav-toc.sidebar-nav-active= '文章目录'
-					li(data-target='site-overview').sidebar-nav-over-view= '站点概览'
+    .sidebar-toggle
+        .sidebar-toggle-line-wrap
+            span.sidebar-toggle-line.sidebar-toggle-line-first
+            span.sidebar-toggle-line.sidebar-toggle-line-middle
+            span.sidebar-toggle-line.sidebar-toggle-line-last
+    aside#sidebar.sidebar
+        .sidebar-inner
+            - var display_toc = is_post and (site.configs.toc == 'show' or (site.configs.toc == 'auto' and post.toc))
+            if display_toc
+                ul.sidebar-nav.motion-element
+                    li(data-target='post-toc-wrap').sidebar-nav-toc.sidebar-nav-active= '文章目录'
+                    li(data-target='site-overview').sidebar-nav-over-view= '站点概览'
 
-			- var class_section = null
-			if display_toc
-				class_section = 'site-overview sidebar-panel'
-			else
-				class_section = 'site-overview sidebar-panel sidebar-panel-active'
-			section(class=class_section)
-				.site-author.motion-element(itemprop='author')
-					img.site-author-image(src=site.configs.avatar, alt=site.configs.author, itemprop='image')
-					p.site-author-name(itemprop='name')= site.configs.author
-					p.site-description.motion-element(itemprop='description')= site.raw_content.escaped
-				nav.site-state.motion-element
-					- var posts_count = get_data(type='post', return_count=True)
-					- var categories_count = get_data(type='folder', level=[1,2], min_posts_count=1, return_count=True)
-					- var tags_count = site.tags.length
+            - var class_section = null
+            if display_toc
+                class_section = 'site-overview sidebar-panel'
+            else
+                class_section = 'site-overview sidebar-panel sidebar-panel-active'
+            section(class=class_section)
+                .site-author.motion-element(itemprop='author')
+                    img.site-author-image(src=site.configs.avatar, alt=site.configs.author, itemprop='image')
+                    p.site-author-name(itemprop='name')= site.configs.author
+                    p.site-description.motion-element(itemprop='description')= site.raw_content.escaped
+                nav.site-state.motion-element
+                    - var posts_count = get_data(type='post', return_count=True)
+                    - var categories_count = get_data(type='folder', level=[1,2], min_posts_count=1, return_count=True)
+                    - var tags_count = site.tags.length
 
-					.site-state-item.site-state-posts
-						a(href='/archive')
-							span.site-state-item-count= posts_count
-							span.site-state-item-name= '日志'
+                    .site-state-item.site-state-posts
+                        a(href='/archive')
+                            span.site-state-item-count= posts_count
+                            span.site-state-item-name= '日志'
 
-					if categories_count > 1
-						.site-state-item.site-state-categories
-							a(href='/categories')
-								span.site-state-item-count= categories_count
-								span.site-state-item-name= '分类'
+                    if categories_count > 1
+                        .site-state-item.site-state-categories
+                            a(href='/categories')
+                                span.site-state-item-count= categories_count
+                                span.site-state-item-name= '分类'
 
-					if tags_count > 1
-						.site-state-item.site-state-tags
-							a(href='/tags')
-								span.site-state-item-count= tags_count
-								span.site-state-item-name= '标签'
+                    if tags_count > 1
+                        .site-state-item.site-state-tags
+                            a(href='/tags')
+                                span.site-state-item-count= tags_count
+                                span.site-state-item-name= '标签'
 
-				if site.configs.rss
-					.feed-link.motion-element
-						a(href='/feed', rel='alternate')
-							i.fa.fa-rss
-							|  RSS
-				.links-of-author.motion-element
-					- var weibo = site.configs.weibo
-					- var twitter = site.configs.twitter
-					- var instagram = site.configs.instagram
-					- var dribbble = site.configs.dribbble
-					if weibo
-						span.links-of-author-item
-							a(href='//www.weibo.com/%s'%weibo, target='blank', title='Weibo')
-								i.fa.fa-fw.fa-weibo
-								| Weibo
-					if twitter
-						span.links-of-author-item
-							a(href='//www.twitter.com/%s'%twitter, target='blank', title='Twitter')
-								i.fa.fa-fw.fa-twitter
-								| Twitter
-					if instagram
-						span.links-of-author-item
-							a(href='//www.instagram.com/%s'%instagram, target='blank', title='Instagram')
-								i.fa.fa-fw.fa-instagram
-								| Instagram
-					if dribbble
-						span.links-of-author-item
-							a(href='//www.dribbble.com/%s'%dribbble, target='blank', title='Dribbble')
-								i.fa.fa-fw.fa-dribbble
-								| Dribbble
+                if site.configs.rss
+                    .feed-link.motion-element
+                        a(href='/feed', rel='alternate')
+                            i.fa.fa-rss
+                            |  RSS
+                .links-of-author.motion-element
+                    - var weibo = site.configs.weibo
+                    - var twitter = site.configs.twitter
+                    - var instagram = site.configs.instagram
+                    - var dribbble = site.configs.dribbble
+                    if weibo
+                        span.links-of-author-item
+                            a(href='//www.weibo.com/%s'%weibo, target='blank', title='Weibo')
+                                i.fa.fa-fw.fa-weibo
+                                | Weibo
+                    if twitter
+                        span.links-of-author-item
+                            a(href='//www.twitter.com/%s'%twitter, target='blank', title='Twitter')
+                                i.fa.fa-fw.fa-twitter
+                                | Twitter
+                    if instagram
+                        span.links-of-author-item
+                            a(href='//www.instagram.com/%s'%instagram, target='blank', title='Instagram')
+                                i.fa.fa-fw.fa-instagram
+                                | Instagram
+                    if dribbble
+                        span.links-of-author-item
+                            a(href='//www.dribbble.com/%s'%dribbble, target='blank', title='Dribbble')
+                                i.fa.fa-fw.fa-dribbble
+                                | Dribbble
 
-				- var cc = ['by', 'by-nc', 'by-nc-nd', 'by-nc-sa', 'by-nd', 'by-sa', 'zero']
-				if site.configs.creative_commons in cc 
-					.cc-license.motion-element(itemprop='license')
-						a.cc-opacity(href='http://creativecommons.org/licenses/%s'%site.configs.creative_commons, target='blank')
-							img(src='/template/source/images/cc-%s.svg'%site.configs.creative_commons, alt='Creative Commons')
+                - var cc = ['by', 'by-nc', 'by-nc-nd', 'by-nc-sa', 'by-nd', 'by-sa', 'zero']
+                if site.configs.creative_commons in cc 
+                    .cc-license.motion-element(itemprop='license')
+                        a.cc-opacity(href='http://creativecommons.org/licenses/%s'%site.configs.creative_commons, target='blank')
+                            img(src='/template/source/images/cc-%s.svg'%site.configs.creative_commons, alt='Creative Commons')
 
-				if site.configs.links
-					div(class='links-of-blogroll motion-element links-of-blogroll-%s'%site.configs.links_layout)
-						.links-of-blogroll-title
-							i.fa.fa-fw.fa-globe
-							site.configs.links_title
-						ul.links-of-blogroll-list
-							for link in site.configs.links
-								li.links-of-blogroll-item
-									- var title = link.split(':')[0]
-									- var url = link.split(':')[1]
-									a(href='//%s'%url, target='blank', title=title)= title
+                if site.configs.links
+                    div(class='links-of-blogroll motion-element links-of-blogroll-%s'%site.configs.links_layout)
+                        .links-of-blogroll-title
+                            i.fa.fa-fw.fa-globe
+                            site.configs.links_title
+                        ul.links-of-blogroll-list
+                            for link in site.configs.links
+                                li.links-of-blogroll-item
+                                    - var title = link.split(':')[0]
+                                    - var url = link.split(':')[1]
+                                    a(href='//%s'%url, target='blank', title=title)= title
 
-			if display_toc
-				section.post-toc-wrap.motion-element.sidebar-panel.sidebar-panel-active
-					.post-toc
-						if post.toc
-							- var toc = post.toc
-							toc = toc.replace('<ul>', '<ol class="nav">')
-							toc = toc.replace('</ul>', '</ol>')
-							toc = toc.replace('<li>', '<li class="nav-item">')
-							.post-toc-content= toc
-						else
-							p.post-toc-empty= '此文章未包含目录'
+            if display_toc
+                section.post-toc-wrap.motion-element.sidebar-panel.sidebar-panel-active
+                    .post-toc
+                        if post.toc
+                            - var toc = post.toc
+                            toc = toc.replace('<ul>', '<ol class="nav">')
+                            toc = toc.replace('</ul>', '</ol>')
+                            toc = toc.replace('<li>', '<li class="nav-item">')
+                            .post-toc-content= toc
+                        else
+                            p.post-toc-empty= '此文章未包含目录'

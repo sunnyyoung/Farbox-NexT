@@ -1,10 +1,10 @@
 if site.configs.comment
-	.comments#comments
-		if site.configs.duoshuo and not site.configs.disqus
-			.ds-thread(data-thread-key=post.url_path, data-title=post.title, data-url=request.host + post.url)
-		else if site.configs.disqus and not site.configs.duoshuo
-			#disqus_thread
-				noscript
-					a(href='//disqus.com/?ref_noscript')= 'Comments powered by Disqus.'
-		else
-			include include/comments
+    .comments#comments
+        if site.configs.duoshuo and not site.configs.disqus
+            .ds-thread(data-thread-key=post.url_path, data-title=post.title, data-url=request.host + post.url)
+        else if site.configs.disqus and not site.configs.duoshuo
+            #disqus_thread
+                noscript
+                    a(href='//disqus.com/?ref_noscript')= 'Comments powered by Disqus.'
+        else
+            include include/comments

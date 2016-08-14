@@ -3,17 +3,17 @@ from layout/macro/post-collapse import render as post_template
 from layout/macro/sidebar import render as sidebar_template
 
 block title
-	title= '标签 | %s'%site.title
+    title= '标签 | %s'%site.title
 
 block content
-	.posts-collapse#posts
-		.tag-cloud
-			.tag-cloud-title= '目前共%s个标签'%site.tags.length
-			.tag-cloud-tags
-				for tag in site.tags
-					- var tag_name = tag[0]
-					- var font_size = 12 + (tag[1] - 1)*1.5
-					a(href='/tag/%s'%tag_name, style='font-size: %spx; color: #212121'%font_size)= tag_name
+    .posts-collapse#posts
+        .tag-cloud
+            .tag-cloud-title= '目前共%s个标签'%site.tags.length
+            .tag-cloud-tags
+                for tag in site.tags
+                    - var tag_name = tag[0]
+                    - var font_size = 12 + (tag[1] - 1)*1.5
+                    a(href='/tag/%s'%tag_name, style='font-size: %spx; color: #212121'%font_size)= tag_name
 
 block sidebar
-	+sidebar_template(is_post=False)
+    +sidebar_template(is_post=False)

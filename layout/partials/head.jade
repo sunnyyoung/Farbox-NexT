@@ -6,13 +6,13 @@ meta(name="author", content=site.configs.author.escaped)
 meta(name="keywords", content=site.configs.keywords.escaped)
 meta(name="description", content=site.raw_content.escaped)
 if has('/_image/favicon.png')
-	link(rel="shortcut icon", href=site.configs.favicon, type="image/x-icon")
+    link(rel="shortcut icon", href=site.configs.favicon, type="image/x-icon")
 if site.configs.scheme == 'mist'
-	load('/template/source/css/mist.css')
+    load('/template/source/css/mist.css')
 else if site.configs.scheme == 'muse'
-	load('/template/source/css/muse.css')
+    load('/template/source/css/muse.css')
 else if site.configs.scheme == 'pisces'
-	load('/template/source/css/pisces.css')
+    load('/template/source/css/pisces.css')
 load('/template/source/css/code-highlight/default.css')
 load('//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css')
 load('//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css')
@@ -22,13 +22,13 @@ load('//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css')
 - var sidebar = 'sidebar: {"position": "' + site.configs.sidebar_position + '","display": "' + site.configs.sidebar_display +'"},'
 - var fancybox = null
 if site.configs.fancybox
-	fancybox = 'fancybox: true,'
+    fancybox = 'fancybox: true,'
 else
-	fancybox = 'fancybox: false,'
+    fancybox = 'fancybox: false,'
 - var motion = null
 if site.configs.motion
-	motion = 'motion: true,'
+    motion = 'motion: true,'
 else
-	motion = 'motion: false,'
+    motion = 'motion: false,'
 - var config_end = '}'
 script(type='text/javascript', id='hexo.configuration')= config_next + ';' + config_start + scheme + sidebar + fancybox + motion + config_end + ';'

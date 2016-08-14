@@ -3,16 +3,16 @@ from layout/macro/post-collapse import render as post_template
 from layout/macro/sidebar import render as sidebar_template
 
 block title
-	title= '标签:%s | '%path2 + site.title
+    title= '标签:%s | '%path2 + site.title
 
 block content
-	.posts-collapse#posts
-		.collection-title
-			h2= path2
-				small= '标签'
-		for post in posts
-			+post_template(post)
-	include layout/partials/pagination
+    .posts-collapse#posts
+        .collection-title
+            h2= path2
+                small= '标签'
+        for post in posts
+            +post_template(post)
+    include layout/partials/pagination
 
 block sidebar
-	+sidebar_template(is_post=False)
+    +sidebar_template(is_post=False)

@@ -1,9 +1,9 @@
 mixin render(post)
-	article.post.post-type-normal
-		header.post-header
-			h1.post-title
-				a.post-title-link(href=post.url, itemprop='url')
-					span(itemprop='name')= post.title
-			.post-meta
-				- var post_date = post.date.format("%Y-%m-%d")
-				time.post-time(itemprop='dateCreated', datetime=post_date, content=post_date)= post.date.format("%m-%d")
+    article.post.post-type-normal
+        header.post-header
+            h1.post-title
+                a.post-title-link(href=post.url, itemprop='url')
+                    span(itemprop='name')= post.title
+            .post-meta
+                - var post_date = post.date.format("%Y-%m-%d")
+                time.post-time(itemprop='dateCreated', datetime=post_date, content=post_date)= post.date.format("%m-%d")
