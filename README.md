@@ -28,6 +28,7 @@ A hexo theme [NexT](https://github.com/iissnan/hexo-theme-next) for Farbox.
 - [x] Auto toc display
 - [ ] Local Search
 - [ ] Customize code highlight theme
+- [ ] Customize farbox comment style
 
 ##License
 The [MIT License](LICENSE).
