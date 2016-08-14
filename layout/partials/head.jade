@@ -7,12 +7,14 @@ meta(name="keywords", content=site.configs.keywords.escaped)
 meta(name="description", content=site.raw_content.escaped)
 if has('/_image/favicon.png')
     link(rel="shortcut icon", href=site.configs.favicon, type="image/x-icon")
-if site.configs.scheme == 'mist'
-    load('/template/source/css/mist.css')
-else if site.configs.scheme == 'muse'
+if site.configs.scheme == 'muse'
     load('/template/source/css/muse.css')
+else if site.configs.scheme == 'mist'
+    load('/template/source/css/mist.css')
 else if site.configs.scheme == 'pisces'
     load('/template/source/css/pisces.css')
+else
+    load('/template/source/css/muse.css')    
 load('/template/source/css/code-highlight/default.css')
 load('//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css')
 load('//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css')

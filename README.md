@@ -17,6 +17,11 @@ A hexo theme [NexT](https://github.com/iissnan/hexo-theme-next) for Farbox.
 ![Farbox-NexT Settings](http://i.imgur.com/dxjW0nl.png)
 抛弃`.yml`文件手动配置，采用可视化编辑配置
 
+##Usage
+
+- 自动方式: 打开[http://www.sunnyyoung.net/template](http://www.sunnyyoung.net/template)，填写克隆模板的目标站点，点击克隆
+- 手动方式: Clone此项目并重命名为Template，拖动到Farbox站点目录下
+
 ##Notes
 
 - **由于Farbox的模版引擎和Hexo有区别，部分Hexo的样式或功能暂时无法实现，持续更新**
