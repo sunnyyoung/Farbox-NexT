@@ -16,20 +16,19 @@ else if site.configs.scheme == 'pisces'
 load('/template/source/css/code-highlight/default.css')
 load('//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css')
 load('//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css')
-load('//fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext')
 - var config_next = 'var NexT = window.Next || {}'
 - var config_start = 'var CONFIG = {'
 - var scheme = 'scheme: \'' + site.configs.scheme + '\','
 - var sidebar = 'sidebar: {"position": "' + site.configs.sidebar_position + '","display": "' + site.configs.sidebar_display +'"},'
 - var fancybox = null
 if site.configs.fancybox
-	fancybox = 'fancybox: ' + 'true' + ','
+	fancybox = 'fancybox: true,'
 else
-	fancybox = 'fancybox: ' + 'false' + ','
+	fancybox = 'fancybox: false,'
 - var motion = null
 if site.configs.motion
-	motion = 'motion: ' + 'true' + ','
+	motion = 'motion: true,'
 else
-	motion = 'motion: ' + 'false' + ','
+	motion = 'motion: false,'
 - var config_end = '}'
 script(type='text/javascript', id='hexo.configuration')= config_next + ';' + config_start + scheme + sidebar + fancybox + motion + config_end + ';'
