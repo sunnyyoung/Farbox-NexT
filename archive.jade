@@ -5,6 +5,9 @@ from layout/macro/sidebar import render as sidebar_template
 block title
     title='归档 | %s'%site.title
 
+block page_class
+    | page-archive
+
 block content
     section#posts.posts-collapse
         - var cheers = null

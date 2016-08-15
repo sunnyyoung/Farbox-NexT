@@ -8,14 +8,8 @@ html(class=class_html)
         block title
         include layout/partials/head
     body
-        - var page_type = request.path.split('/')[1]
-        if page_type == '' or page_type == 'page'
-            class_page = 'page-home'
-        else if page_type == 'archive'
-            class_page = 'page-archive'
-        else if page_type == 'post'
-            class_page = 'page-post-detail'
-        div(class='container one-collumn %s'%class_page +  ' sidebar-position-%s'%site.configs.sidebar_position)
+        - var container_class = 'container one-collum sidebar-position-' + site.configs.sidebar_position
+        div(class='{{ container_class }} {% block page_class %}{% endblock %}')
             .headband
             header#header.header
                 .header-inner

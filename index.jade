@@ -5,6 +5,9 @@ from layout/macro/sidebar import render as sidebar_template
 block title
     title= site.title
 
+block page_class
+    | page-home
+
 block content
     section#posts.posts-expand
         for post in posts

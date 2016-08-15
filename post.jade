@@ -5,6 +5,9 @@ from layout/macro/sidebar import render as sidebar_template
 block title
     title= post.title
 
+block page_class
+    | page-post-detail
+
 block content
     .posts-expand#posts
         +post_template(post, is_index=False)

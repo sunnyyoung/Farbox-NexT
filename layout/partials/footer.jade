@@ -1,5 +1,8 @@
 .copyright
-    span(itemprop='copyrightYear')= '&copy;%s - <script type=\'text/javascript\'>document.write((new Date()).getFullYear())</script>'%site.configs.copyright_year
+    if site.configs.copyright_year
+        span(itemprop='copyrightYear')= '&copy;%s - <script type=\'text/javascript\'>document.write((new Date()).getFullYear())</script>'%site.configs.copyright_year
+    else
+        span(itemprop='copyrightYear')= '&copy;<script type=\'text/javascript\'>document.write((new Date()).getFullYear())</script>'
     span.with-love
         i.fa.fa-heart
     span.author(itemprop='copyrightHolder')= site.configs.author
