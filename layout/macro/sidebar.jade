@@ -54,6 +54,7 @@ mixin render(is_post)
                     - var twitter = site.configs.twitter
                     - var instagram = site.configs.instagram
                     - var dribbble = site.configs.dribbble
+                    - var github = site.configs.github
                     if weibo
                         span.links-of-author-item
                             a(href='//www.weibo.com/%s'%weibo, target='blank', title='Weibo')
@@ -74,6 +75,11 @@ mixin render(is_post)
                             a(href='//www.dribbble.com/%s'%dribbble, target='blank', title='Dribbble')
                                 i.fa.fa-fw.fa-dribbble
                                 | Dribbble
+                    if github
+                        span.links-of-author-item
+                            a(href='//www.github.com/%s'%github, target='blank', title='GitHub')
+                                i.fa.fa-fw.fa-github
+                                | GitHub
 
                 - var cc = ['by', 'by-nc', 'by-nc-nd', 'by-nc-sa', 'by-nd', 'by-sa', 'zero']
                 if site.configs.creative_commons in cc 

@@ -260,6 +260,12 @@
                                 "title": "Dribbble",
                                 "placeholder": "Dribbble ID",
                                 "model": "text"
+                            },
+                            {
+                                "key": "github",
+                                "title": "GitHub",
+                                "placeholder": "GitHub ID",
+                                "model": "text"
                             }
                         ]
                     }
