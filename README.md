@@ -6,7 +6,7 @@ A hexo theme [NexT](https://github.com/iissnan/hexo-theme-next) for Farbox.
 
 > 个人很喜欢的一款主题，同时又偏爱Farbox的便捷，鱼和熊掌不可兼得，因此自己动手移植了这款主题。
 
-[在线预览 Preview](http://www.sunnyyoung.net)
+[在线预览 Preview](http://sunnyyoung.net.park.farbox.net)
 
 ##Screenshot
 
@@ -19,7 +19,7 @@ A hexo theme [NexT](https://github.com/iissnan/hexo-theme-next) for Farbox.
 
 ##Usage
 
-- 自动方式: 打开[http://www.sunnyyoung.net/template](http://www.sunnyyoung.net/template)，填写克隆模板的目标站点，点击克隆
+- 自动方式: 打开[http://sunnyyoung.net.park.farbox.net/template](http://sunnyyoung.net.park.farbox.net/template)，填写克隆模板的目标站点，点击克隆
 - 手动方式: Clone此项目并重命名为Template，拖动到Farbox站点目录下
 
 ##Notes
